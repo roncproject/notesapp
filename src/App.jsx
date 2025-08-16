@@ -3,13 +3,13 @@ import { generateClient } from "aws-amplify/api";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-// Generate the data client
-const client = generateClient();
-
 function App() {
   const [notes, setNotes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  // Generate the data client inside the component
+  const client = generateClient();
 
   // Function to fetch notes using the data client
   const fetchNotes = async () => {
